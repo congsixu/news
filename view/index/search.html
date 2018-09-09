@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0">
+	<title>今日头条搜索</title>
+	<link rel="stylesheet" href="/assets/index/css/search.css">
+	<script src="/assets/index/js/rem.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<!-- 头部开始 -->
+	<div class="header">
+		<div class="abs-l">
+			<a href="/index.php" class="back"></a>
+		</div>
+		<div class="abs-m">搜索</div>
+	</div>
+
+	<!-- 搜索栏开始 -->
+	<form action="/index.php" id="search-form">
+		<div class="search-content">
+			<a href="#" class="log"></a>
+			<input type="hidden" name="c" value="page">
+			<input type="hidden" name="m" value="search">
+			<input type="text" class="search-input" placeholder="请输入搜索关键词" name="wd">
+		</div>
+		<div class="action">
+			<div class="arrowup-shadow"></div>
+			<div class="arrowup"></div>
+			<ul class="nav">
+				<li><a class="toutiao" href="#">新闻</a></li>
+				<li><a class="shenma" href="#">神马</a></li>
+				<li><a class="baidu" href="#">百度</a></li>
+			</ul>	
+		</div>
+	</form>
+	<div class="backdrop"></div>
+
+
+	<!-- 内容开始 -->
+	<div class="content">
+		<?php if( $total_number < 0 ){ ?>
+		<ul class="hotspot">
+			<li><a href="" class="keyword">丁俊晖挪广告获赞</a></li>
+			<li><a href="" class="keyword">黄晓明 股票操纵</a></li>
+			<li><a href="" class="keyword">韩学臣被判无期</a></li>
+			<li><a href="" class="keyword">28省份养老金上调</a></li>
+			<li><a href="" class="keyword">火箭签约安东尼</a></li>
+			<li><a href="" class="keyword">阅文收购新丽传媒</a></li>
+			<li><a href="" class="keyword">哈登对女子动粗</a></li>
+			<li><a href="" class="keyword">南京楼市调控新政</a></li>
+			<li><a href="" class="keyword">怪物猎人世界下架</a></li>
+			<li><a href="" class="keyword">江西彭小峰被批捕</a></li>
+		</ul>
+		<?php } ?>
+
+		<?php if( $total_number == 0 ){ ?>
+		<div id="result"><span>抱歉</span>,没有找到你想要的结果</div>
+		<?php } ?>
+
+		<?php if( $total_number > 0 ){ ?>
+		<div id="result">共找到 <span><?php  echo $total_number ?></span> 条结果</div>
+		<?php } ?>
+
+		<div class="content-list active">
+			<?php foreach( $result as $k => $v ) { ?>
+			<?php	if( $v['cid'] == 2 ){  ?>
+
+			<section class="has-action">
+				<a href="" class="none-img">
+					<div class="item-detail">
+						<div class="img-holder-large">
+							<h3 class="dotnot">
+								<?php echo $v['title'] ?>
+							</h3>
+							<img src="<?php echo $v['img'] ?>" alt="">
+							<div class="video-btn"></div>
+						</div>
+						<div class="item-info">
+							<span class="lable space">置顶</span>
+							<span class="src space">央视网新闻</span>
+							<span class="cmt space">
+								评论
+								<span>52</span>
+							</span>
+							<span class="time space">14分钟前</span>
+						</div>
+					</div>
+				</a>
+			</section>
+			<?php }else{ ?>
+			<section class="has-action">
+				<a href="" class="none-img">
+					<div class="item-detail desc">
+						<h3 class="dotnot">
+							<?php echo $v['title'] ?>
+						</h3>
+						<div class="item-info">
+							<span class="lable space">置顶</span>
+							<span class="src space">央视网新闻</span>
+							<span class="cmt space">
+								评论
+								<span><?php echo $v['comment_num'] ?></span>
+							</span>
+							<span class="time space"><?php echo $v['ctime'] ?></span>
+						</div>
+					</div>
+					<div class="img-holder-small">
+						<img src="<?php echo $v['img'] ?>" alt="">
+					</div>
+				</a>
+			</section>
+			<?php } ?>
+			<?php } ?>
+		</div>
+
+		<?php if ( $total_number > 4 ){ ?>
+		<div id="more" wd="<?php echo $wd ?>">加载更多</div>
+		<?php } ?>
+	</div>
+</body>
+<script src="/assets/index/js/search.js"></script>
+</html>

@@ -1,0 +1,364 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+body{
+	font-size: 0.28rem;
+	color: #333;
+}
+/* 头部开始 */
+.header{
+	width: 100%;
+	height: 0.88rem;
+	background: #d43d3d;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+.header .abs-l{
+	width: 0.88rem;
+	height: 0.88rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.abs-l .back{
+	display: block;
+    height: 0.88rem;
+    top: 0;
+    left: 0;
+    width: 0.88rem;
+    border-radius: 0;
+    background: url('../img/back.png') no-repeat center center;
+    background-size: 0.4rem;
+}
+.header .abs-m{
+	width: 100%;
+	height: 100%;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #fff;
+    font-weight: 700;
+    line-height: 0.88rem;
+}
+
+/* 搜索栏开始 */
+#search-form{
+	display: block;
+	margin-top: 0.88rem;
+	width: 100%;
+	background: #c9c9c9;
+    position: relative;
+}
+.search-content{
+	width: 100%;
+	height: 0.76rem;
+	padding: 0.1rem;
+	position: relative;
+}
+.search-content .log{
+	display: block;
+    width: 0.8rem;
+    height: 0.54rem;
+    background: url('../img/toutiao.png') #fff no-repeat 0.1rem -0.73rem;
+    background-size: 0.4rem;
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+}
+.search-content .search-input{
+	display: block;
+	border: 0;
+    border-radius: 0.06rem;
+    margin: 0;
+    width: 100%;
+    font-size: 0.32rem;
+    -webkit-appearance: none;
+    padding: 0.1rem 0.2rem 0.1rem 0.8rem;
+    color: #666;
+    background: #fff;
+    outline: none;
+}
+.action{
+	position: absolute;
+    top: 0.9rem;
+    width: 4.8rem;
+    left: 0.1rem;
+    z-index: 1030;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all .2s ease-in-out 0s;
+    transform-origin: 10% 0;
+}
+.action.active{
+	visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.action .arrowup-shadow{
+	position: absolute;
+    top: -0.1rem;
+    left: 0.2rem;
+    border-right: transparent 5px solid;
+    border-left: transparent 5px solid;
+    border-bottom: silver 5px solid;
+    width: 0;
+    height: 0;
+}
+.action .arrowup{
+	position: absolute;
+    top: -0.08rem;
+    left: 0.2rem;
+    border-right: transparent 5px solid;
+    border-left: transparent 5px solid;
+    border-bottom: #c9c9c9 5px solid;
+    width: 0;
+    height: 0;
+}
+.action .nav{
+	background-color: #c9c9c9;
+    padding: 0;
+    border-radius: 0.08rem;
+    list-style-type: none;
+    overflow: hidden;
+    border: 0.01rem solid silver;
+    display: flex;
+    justify-content: flex-start;
+}
+.action .nav li{
+	width: 31%;
+}
+.action .nav li a{
+	display: block;
+    text-align: center;
+    padding: 1rem 0 0.1rem;
+    color: #555;
+    font-size: 0.24rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: url('../img/toutiao.png') no-repeat center 0.04rem;
+    background-size: 0.72rem;
+}
+.action .nav li a.toutiao{
+	background-position: center -1.25rem;
+}
+.action .nav li a.shenma{
+    background-position: center -2.65rem;
+}
+.action .nav li a.baidu{
+	background-position: center 0.16rem;
+}
+
+.backdrop{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1020;
+    display: none;
+}
+
+/* 内容开始 */
+.content{
+	width: 100%;
+}
+.content .hotspot{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.hotspot li{
+	margin: 0.3rem 0.1rem 0;
+}
+.hotspot li .keyword{
+	display: block;
+	background: #f5f5f5;
+    color: #363636;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
+    padding: 0.1rem;
+}
+
+
+/*主页内容样式*/
+.content #result{
+    width: 100%;
+    height: 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+}
+.content #result span{
+    font-size: 0.34rem;
+    color: red;
+}
+.content #more{
+    width: 100%;
+    height: 0.5rem;
+    background: #ddd;
+    border: 0.01rem solid #5d6062;
+    margin-top: 0.1rem;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    text-align: center;
+}
+.content #last{
+    width: 100%;
+    height: 0.5rem;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    text-align: center;
+    color: #999;
+}
+
+
+.content .content-list{
+    width: 100%;
+    padding: 0 0.3rem;
+    display: none;
+}
+.content .content-list.active{
+    display: block;
+}
+.content-list .has-action{
+    width: 100%;
+    border-bottom: 0.01rem solid rgba(221, 221, 221, 0.6);
+}
+.has-action .none-img{
+    display: block;
+    padding: 0.32rem 0;
+    overflow: hidden;
+}
+
+.item-detail{
+
+}
+.item-detail.desc{
+    width: 67%;
+    float: left;
+}
+.item-detail .dotnot{
+    line-height: 0.42rem;
+    color: #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    font-weight: normal;
+}
+/* 三个图的情况 */
+.item-detail .item-image{
+    width: 100%;
+    margin-top: 0.12rem;
+}
+.item-image .list-image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.list-image .list-image-holder{
+    overflow: hidden;
+    width: 33.3%;
+    height: 100%;
+}
+.list-image-holder img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 一个大图的情况 */
+.img-holder-large{
+    margin-top: 0.12rem;
+    width: 100%;
+    background: url('../img/title.png') #efefef no-repeat center center;
+    background-size: 0.54rem;
+    overflow: hidden;
+    min-height: 3.75rem;
+    position: relative;
+}
+.img-holder-large h3.dotnot{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    margin: 0.1rem 0.2rem;
+    font-size: 0.28rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.img-holder-large img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.img-holder-large .video-btn{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: url('../img/video.png') no-repeat center center;
+    background-size: 1rem;
+}
+
+.item-detail .item-info{
+    color: #999;
+    overflow: hidden;
+    font-size: 0;
+    margin-top: 0.12rem;
+}
+.item-info .space{
+    display: block;
+    float: left;
+    font-size: 0.2rem;
+    line-height: 0.24rem;
+    margin-right: 0.1rem;
+}
+.item-info .lable.space{
+    color: #f85959;
+    padding: 0 0.06rem;
+    font-size: 0.18rem;
+    line-height: 0.24rem;
+    text-align: center;
+    border: 0.01rem solid rgba(248, 89, 89, 0.5);
+    border-radius: 0.04rem;
+}
+.item-info .src.space{
+
+}
+.item-info .cmt.space{
+
+}
+.item-info .time.space{
+
+}
+
+/* 一个小图在右 */
+.img-holder-small{
+    float: right;
+    overflow: hidden;
+    width: 33%;
+    height: 100%;
+    vertical-align: middle;
+}
+.img-holder-small img{
+    display: block;
+    width: 100%;
+    height: auto;
+}

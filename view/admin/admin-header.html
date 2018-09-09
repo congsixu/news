@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理页面</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/admin/css/icons.min.css">
+    <link rel="stylesheet" href="/assets/admin/css/app.min.css">
+    <link rel="stylesheet" href="/assets/index/css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+
+
+</head>
+<style>
+    @keyframes loader {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<body>
+<div class="wrapper">
+
+    <div class="left-side-menu">
+
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 455px;"><div class="slimscroll-menu active" style="overflow: hidden; width: auto; height: 455px;">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center">
+                        <span class="logo-lg">
+                            <img src="../../../assets/images/logo.png" alt="" height="16">
+                        </span>
+                <span class="logo-sm">
+                            <img src="../../../assets/images/logo_sm.png" alt="" height="16">
+                        </span>
+            </a>
+
+            <!--- Sidemenu -->
+            <ul class="metismenu side-nav in">
+
+                <li class="side-nav-title side-nav-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航</font></font></li>
+
+                <li class="side-nav-item">
+                    <a href="/admin.php?c=admin" class="side-nav-link" aria-expanded="false">
+                        <i class="dripicons-meter"></i>
+                        <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 首页 </font></font></span>
+
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="/admin.php?c=user" class="side-nav-link" aria-expanded="false">
+                        <i class="dripicons-view-apps"></i>
+                        <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 用户 </font></font></span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                </li>
+
+
+
+                <li class="side-nav-item">
+                    <a href="/admin.php?c=category" class="side-nav-link" aria-expanded="false">
+                        <i class="dripicons-browser"></i>
+                        <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 分类 </font></font></span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                </li>
+
+
+
+                <li class="side-nav-item">
+                    <a href="/admin.php?c=news" class="side-nav-link" aria-expanded="false">
+                        <i class="dripicons-briefcase"></i>
+                        <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 新闻 </font></font></span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Help Box -->
+            <div class="help-box text-white text-center">
+                <a href="#" class="float-right close-btn text-white">
+                    <i class="mdi mdi-close"></i>
+                </a>
+                <img src="../../../assets/images/help-icon.svg" height="90" alt="帮助器图标图像">
+                <h5 class="mt-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">无限制访问</font></font></h5>
+                <p class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级以计划访问无限制的报告</font></font></p>
+                <a href="javascript: void(0);" class="btn btn-outline-light btn-sm"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级</font></font></a>
+            </div>
+            <!-- end Help Box -->
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div><div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.297259; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 200.024px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        <!-- Sidebar -left -->
+
+    </div>
+    <div class="content-page">
+        <div class="content">
+            <div class="navbar-custom">
+                <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-bell noti-icon"></i>
+                            <span class="noti-icon-badge"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
+
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="m-0">
+                                            <span class="float-right">
+                                                <a href="javascript: void(0);" class="text-dark">
+                                                    <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">清除所有</font></font></small>
+                                                </a>
+                                            </span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通知
+                                </font></font></h5>
+                            </div>
+
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 317px;">
+                                <div class="slimscroll" style="max-height: 230px; overflow: hidden; width: auto; height: 317px;">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-primary">
+                                            <i class="mdi mdi-comment-account-outline"></i>
+                                        </div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caleb Flakelar在</font>
+                                            <small class="text-muted"><font style="vertical-align: inherit;">1分钟前</font>
+                                            </small>
+                                            <font style="vertical-align: inherit;">对Admin发表了评论
+                                            </font></font>
+                                            <small class="text-muted"><font style="vertical-align: inherit;"></font>
+                                            </small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-info">
+                                            <i class="mdi mdi-account-plus"></i>
+                                        </div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新用户注册。
+                                        </font></font>
+                                            <small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5小时前</font></font></small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon">
+                                            <img src="../../../assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""></div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">克里斯蒂娜骄傲</font></font></p>
+                                        <p class="text-muted mb-0 user-msg">
+                                            <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">你好你好吗？</font><font style="vertical-align: inherit;">我们下次会议怎么样？</font></font></small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-primary">
+                                            <i class="mdi mdi-comment-account-outline"></i>
+                                        </div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Caleb Flakelar在</font>
+                                            <small class="text-muted"><font style="vertical-align: inherit;">4天前</font>
+                                            </small>
+                                            <font style="vertical-align: inherit;">对Admin发表了评论
+                                            </font></font>
+                                            <small class="text-muted"><font style="vertical-align: inherit;"></font>
+                                            </small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon">
+                                            <img src="../../../assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""></div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">凯伦罗宾逊</font></font></p>
+                                        <p class="text-muted mb-0 user-msg">
+                                            <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">哇 ！</font><font style="vertical-align: inherit;">这个管理员看起来很棒，设计很棒</font></font>
+                                            </small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-info">
+                                            <i class="mdi mdi-heart"></i>
+                                        </div>
+                                        <p class="notify-details"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carlos Crouch赞了
+                                        </font></font><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Admin </font></font></b>
+                                            <small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13天前</font></font></small>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 0px; opacity: 0.311549; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 134.949px;"></div>
+                                <div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                            </div>
+
+                            <!-- All-->
+                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                查看全部
+                            </font></font></a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <span class="account-user-avatar">
+                                        <img src="../../../assets/images/users/avatar-1.jpg" alt="用户图像" class="rounded-circle">
+                                    </span>
+                            <span>
+                                        <span class="account-user-name"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dominic Keller </font></font></span>
+                                        <span class="account-position"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创始人</font></font></span>
+                                    </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
+                            <!-- item-->
+                            <div class=" dropdown-header noti-title">
+                                <h6 class="text-overflow m-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欢迎！</font></font></h6>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-account-circle"></i>
+                                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我的帐户</font></font></span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-account-settings-variant"></i>
+                                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置</font></font></span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-lifebuoy"></i>
+                                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持</font></font></span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-lock-outline"></i>
+                                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">锁屏</font></font></span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-logout"></i>
+                                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">登出</font></font></span>
+                            </a>
+
+                        </div>
+                    </li>
+
+                </ul>
+                <button class="button-menu-mobile open-left disable-btn">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+                <div class="app-search">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="mdi mdi-magnify"></span>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="search"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">搜索</font></font></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>

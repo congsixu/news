@@ -1,0 +1,48 @@
+<?php include('../view/admin/admin-header.html') ?>
+
+<button id="add" class="btn btn-primary" type="submit" style="margin:20px 0;">新建</button>
+
+<table class="table table-striped table-centered mb-0">
+    <thead>
+    <tr>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">id</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户名</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">时间</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作</font></font></th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <tr data-id="">
+        <td class="table-user">
+            1
+        </td>
+        <td class="table-user td">
+            <input data-type="name" class="form-control" type="text" value="">
+        </td>
+        <td class="table-user td">
+            <input data-type="is_default" class="form-control" type="text" value="">
+        </td>
+        <td class="table-action">
+            <a href="javascript: void(0);" class="remove action-icon"> <i class="mdi mdi-delete"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<ul id="pagination-demo" class="pagination-sm"></ul>
+
+<?php include('../view/admin/admin-footer.html') ?>
+
+<script>
+    $(function(){
+        $('#pagination-demo').twbsPagination({
+            totalPages: 5,
+        visiblePages: 4,
+            startPage:1,
+        onPageClick: function (event, page) {
+            // console.log(page);
+
+        }
+    });
+    })
+</script>

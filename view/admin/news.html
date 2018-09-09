@@ -1,0 +1,90 @@
+<!--连接顶部相同页面-->
+<?php include('../view/admin/admin-header.html') ?>
+
+
+<button id="add" class="btn btn-primary" type="submit" style="margin:20px auto">新建</button>
+<div class="loader" style="display: none;
+    position: fixed;top:0;left:0;right:0;bottom:0;
+    margin: auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    vertical-align: middle;
+    border: 3px solid transparent;
+    border-top-color: #346cb0;
+    border-left-color: #346cb0;
+    border-radius: 2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: loader .7s linear infinite;
+    animation: loader .7s linear infinite;
+"></div>
+<table class="table table-striped table-centered mb-0">
+    <thead>
+    <tr>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">id</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">title</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">time</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">commentNum</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cid</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作</font></font></th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <?php foreach($rows as $k=>$v){ ?>
+    <tr data-id="<?php echo $v['id'] ?>">
+        <td class="table-user">
+            <?php echo $v['id'] ?>
+        </td>
+        <td class="table-user td">
+            <input data-type="title" class="form-control" type="text" value="<?php echo $v['title'] ?>">
+        </td>
+        <td class="table-user td">
+            <input data-type="ctime" class="form-control" type="text" value="<?php echo $v['ctime'] ?>">
+        </td>
+        <td class="table-user td">
+            <input data-type="comment_num" class="form-control" type="text" value="<?php echo $v['comment_num'] ?>">
+        </td>
+        <td class="table-user td">
+            <input data-type="cid" class="form-control" type="text" value="<?php echo $v['cid'] ?>">
+        </td>
+        <td class="table-action">
+            <a href="javascript: void(0);" class="remove action-icon"> <i class="mdi mdi-delete"></i></a>
+        </td>
+    </tr>
+    <?php } ?>
+    </tbody>
+</table>
+
+<!--分页的html代码-->
+<ul id="pagination-demo" class="pagination-sm"></ul>
+
+<!--连接底部相同页面-->
+<?php include('../view/admin/admin-footer.html') ?>
+
+<!--分页js-->
+<script>
+    $(function(){
+        $('#pagination-demo').twbsPagination({
+            totalPages: <?php echo $page_total?>,
+        visiblePages: 8,
+            startPage:<?php echo $page?>,
+        onPageClick: function (event, page) {
+            // console.log(page);
+            if(page != <?php echo $page?>){
+                location.href="/admin.php?c=news&page="+page;
+            }
+        }
+    });
+    })
+</script>
+
+<!--新闻信息 增删改查数据库-->
+<script src="/assets/admin/js/news.js"></script>
