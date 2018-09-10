@@ -49,8 +49,7 @@ let recommend = function(){
             img:  $(v).find('img').attr('data-src'),
             url: url,
             comment_num : $(v).find('.comment-num').text(),
-            create_time: $(v).find('.time').text(),
-            content: $(v).html()
+            create_time: $(v).find('.time').text()
           })
         }
       });
@@ -58,8 +57,8 @@ let recommend = function(){
       async.eachLimit(
         data, 1, (v, next) => {
           con.query(
-            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`, `content`) VALUES (?,?,?,?,?,?,?,?)',
-            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time, v.content],
+            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`) VALUES (?,?,?,?,?,?,?)',
+            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time],
             (err, result) => {
               console.log(result.insertId);
               next(null);
@@ -96,8 +95,7 @@ let video = function(){
             img:  $(v).find('img').attr('data-src'),
             url: url,
             comment_num : $(v).find('.comment-num').text(),
-            create_time: $(v).find('.time').text(),
-            content: $(v).html()
+            create_time: $(v).find('.time').text()
           })
         }
       });
@@ -105,8 +103,8 @@ let video = function(){
       async.eachLimit(
         data, 1, (v, next) => {
           con.query(
-            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`, `content`) VALUES (?,?,?,?,?,?,?,?)',
-            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time, v.content],
+            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`) VALUES (?,?,?,?,?,?,?)',
+            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time],
             (err, result) => {
               console.log(result.insertId);
               next(null);
@@ -143,8 +141,7 @@ let hotspot = function(){
             img:  $(v).find('img').attr('data-src'),
             url: url,
             comment_num : $(v).find('.comment-num').text(),
-            create_time: $(v).find('.time').text(),
-            content: $(v).html()
+            create_time: $(v).find('.time').text()
           })
         }
       });
@@ -152,8 +149,8 @@ let hotspot = function(){
       async.eachLimit(
         data, 1, (v, next) => {
           con.query(
-            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`, `content`) VALUES (?,?,?,?,?,?,?,?)',
-            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time, v.content],
+            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`) VALUES (?,?,?,?,?,?,?)',
+            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time],
             (err, result) => {
               console.log(result.insertId);
               next(null);
@@ -190,8 +187,7 @@ let science = function(){
             img:  $(v).find('img').attr('data-src'),
             url: url,
             comment_num : $(v).find('.comment-num').text(),
-            create_time: $(v).find('.time').text(),
-            content: $(v).html()
+            create_time: $(v).find('.time').text()
           })
         }
       });
@@ -199,8 +195,8 @@ let science = function(){
       async.eachLimit(
         data, 1, (v, next) => {
           con.query(
-            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`, `content`) VALUES (?,?,?,?,?,?,?,?)',
-            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time, v.content],
+            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`) VALUES (?,?,?,?,?,?,?)',
+            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time],
             (err, result) => {
               console.log(result.insertId);
               next(null);
@@ -237,8 +233,7 @@ let car = function(){
             img:  $(v).find('img').attr('data-src'),
             url: url,
             comment_num : $(v).find('.comment-num').text(),
-            create_time: $(v).find('.time').text(),
-            content: $(v).html()
+            create_time: $(v).find('.time').text()
           })
         }
       });
@@ -246,8 +241,8 @@ let car = function(){
       async.eachLimit(
         data, 1, (v, next) => {
           con.query(
-            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`, `content`) VALUES (?,?,?,?,?,?,?,?)',
-            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time, v.content],
+            'INSERT INTO `news` ( `cid`, `title`, `dsc`, `img`, `url`, `comment_num`,`ctime`) VALUES (?,?,?,?,?,?,?)',
+            [v.cid, v.title, v.dsc, v.img, v.url, v.comment_num,v.create_time],
             (err, result) => {
               console.log(result.insertId);
               next(null);
